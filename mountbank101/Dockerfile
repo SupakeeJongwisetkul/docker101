@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR /imposters
+RUN npm install -g mountebank
+
+COPY . .
+EXPOSE 2525
+#ENTRYPOINT ["json-server","db.json"]
+# ENTRYPOINT ["mb","--configfile"]
+ENTRYPOINT ["mb"]
+CMD ["start"]

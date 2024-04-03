@@ -1,0 +1,18 @@
+version: "3.5"
+services:
+  web:
+    command: npm run dev
+    container_name: next-docker-development
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+
+
+  
+
+
+    
+    
+
+

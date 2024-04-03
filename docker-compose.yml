@@ -1,0 +1,57 @@
+version: "3.5"
+services:
+ # nginx01:
+ #   image: kop22778/nginx
+ #   container_name: my_nginx1
+ #  ports:
+ #    - 8080:80
+ #   depends_on:
+ #    - mountbank
+ # json_server:
+ #  image: my_json_image:1.0.0
+ #   build:
+ #     context: ./json-server/
+ #     dockerfile: ./Dockerfile 
+ #   ports:
+ #     - 3001:3000
+
+
+  mountbank:
+    image: mountbank:1.0.0
+    build:
+      context: ./mountbank101
+      dockerfile: ./Dockerfile 
+    command: --configfile ./imposters/imposters.ejs --allowInjection
+    ports:
+      - 2525:2525
+      - 8090:8090
+  newman:
+    image: newman:1.0.0
+    build:
+      context: ./newman
+      dockerfile: ./Dockerfile 
+    command: |
+      run ./Docker_workshop_3.postman_collection.json 
+      -e ./docker101.postman_environment.json 
+      -r cli,htmlextra --reporter-htmlextra-export report/report.html 
+      --env-var "HOST=http://host.docker.internal:8090"
+    volumes:
+      - ./newman/report:/newman/report
+    depends_on:
+      - mountbank
+      
+ # postgres:
+ #   image: postgres:13.7
+ #   environment:
+ #     POSTGRES_USER: postgres
+ #     POSTGRES_PASSWORD: postgres
+ #   ports:
+ #     - 5433:5432
+
+  
+
+
+    
+    
+
+

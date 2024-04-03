@@ -1,0 +1,8 @@
+{"level":"info","message":"[mb:2525] mountebank v2.9.1 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2024-02-05T07:56:23.274Z"}
+{"level":"warn","message":"[mb:2525] Running with --allowInjection set. See http://localhost:2525/docs/security for security info","timestamp":"2024-02-05T07:56:23.272Z"}
+{"level":"info","message":"[mb:2525] PUT /imposters","timestamp":"2024-02-05T07:56:23.295Z"}
+{"level":"info","message":"[http:8090] Open for business...","timestamp":"2024-02-05T07:56:23.298Z"}
+{"level":"info","message":"[http:8090] ::1:50583 => GET /api/v1/products","timestamp":"2024-02-05T07:56:27.818Z"}
+{"level":"info","message":"[http:8090] ::1:50584 => GET /favicon.ico","timestamp":"2024-02-05T07:56:27.839Z"}
+{"level":"info","message":"[http:8090] no predicate match, using default response","timestamp":"2024-02-05T07:56:27.841Z"}
+{"level":"info","message":"[mb:2525] Adios - see you soon?","timestamp":"2024-02-05T07:56:52.164Z"}
